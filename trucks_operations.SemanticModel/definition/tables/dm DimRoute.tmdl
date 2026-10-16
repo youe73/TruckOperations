@@ -1,0 +1,46 @@
+table 'dm DimRoute'
+	lineageTag: 7cb09cea-2589-4ad0-b1df-3f13dbb114be
+
+	column DimRoute_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 93b42868-c968-45d2-8aec-50364b400fee
+		summarizeBy: none
+		sourceColumn: DimRoute_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_id
+		dataType: string
+		lineageTag: fefa914f-6ec3-4906-9d3d-d0b44240ecfa
+		summarizeBy: none
+		sourceColumn: route_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8240951a-2570-43d5-a19b-d8e2dab122fa
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: 4cd059a1-799a-4726-9ee6-42dca9f58da7
+			defaultHierarchy: LocalDateTable_9e065aa3-a59a-49bd-9cb0-d927188742c6.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimRoute' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimRoute = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimRoute"]}[Data]
+				in
+				    dm_DimRoute
+
+	annotation PBI_ResultType = Table
+

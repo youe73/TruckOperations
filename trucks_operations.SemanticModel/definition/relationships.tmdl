@@ -1,0 +1,83 @@
+relationship 2febf56e-57bd-4ca9-8284-0f2bcda5d702
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimCustomer'.load_datetime
+	toColumn: LocalDateTable_6c76b0ab-1c8a-4bf6-bf60-3bed11f78c0f.Date
+
+relationship b10a3fdb-0db2-4c11-8195-94959b84d6f3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimDateContractStart'.load_datetime
+	toColumn: LocalDateTable_faab5a4c-84ec-48ec-ae4a-6e5f1e9f864b.Date
+
+relationship 48a76bda-5b46-400e-951a-71103cbbd060
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimDateLoad'.load_datetime
+	toColumn: LocalDateTable_ad7c6ce0-3cde-4e88-961b-df32d692556c.Date
+
+relationship 8ab2d9d8-2d19-4319-8f00-53c20b975bd8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimDateDispatch'.load_datetime
+	toColumn: LocalDateTable_80f0c707-7947-4490-8e39-073ed63872fc.Date
+
+relationship eaa973e2-5802-402b-b792-e77b787c036d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimDestinationLocation'.load_datetime
+	toColumn: LocalDateTable_eea3ab46-3a78-462d-b9e5-e45e71b13a11.Date
+
+relationship 0dea5110-2fb7-4a54-be12-722f7f7fe42e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimDriver'.load_datetime
+	toColumn: LocalDateTable_66123d5d-dafd-41d0-b061-8f0ba8791dfe.Date
+
+relationship 71d764d8-94a4-46ef-8537-a60232f44d83
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimOriginLocation'.load_datetime
+	toColumn: LocalDateTable_ed5d4f4a-a8d8-409b-8889-84031fbf6634.Date
+
+relationship 4cd059a1-799a-4726-9ee6-42dca9f58da7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimRoute'.load_datetime
+	toColumn: LocalDateTable_9e065aa3-a59a-49bd-9cb0-d927188742c6.Date
+
+relationship 488f7bb7-7a11-4cf1-b49c-55a8b38c8fee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimTrailer'.load_datetime
+	toColumn: LocalDateTable_310d97e1-b6ac-410a-aafc-57b7bf337c20.Date
+
+relationship ba2cd89e-0fe4-4f8c-b82b-72aab68f28a1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm DimTruck'.load_datetime
+	toColumn: LocalDateTable_0ce8f82f-9188-4dfc-9983-3d028404c9b9.Date
+
+relationship 946439e7-bb3d-4ad6-a0c0-c60e7b8cf6e1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dm facttripsbasis'.load_datetime
+	toColumn: LocalDateTable_e2e5ecc5-1626-4135-9094-c909628b0c44.Date
+
+relationship AutoDetected_5de05def-f88e-4f05-be45-62ec7673fea3
+	fromColumn: 'dm facttripsbasis'.DimCustomer_sk
+	toColumn: 'dm DimCustomer'.DimCustomer_SK
+
+relationship AutoDetected_cb4cd48c-2585-4c58-a82d-16010d42f59e
+	fromColumn: 'dm facttripsbasis'.DimDatecontractstart_sk
+	toColumn: 'dm DimDateContractStart'.DimDateContractStart_SK
+
+relationship AutoDetected_4f9635c6-d2de-4a59-b657-2136412d6a51
+	fromColumn: 'dm facttripsbasis'.DimDateload_sk
+	toColumn: 'dm DimDateLoad'.DimDateLoad_SK
+
+relationship AutoDetected_7c3abc14-b1b0-4dc3-9790-1037ca0daa6d
+	fromColumn: 'dm facttripsbasis'.DimDatedispatch_sk
+	toColumn: 'dm DimDateDispatch'.DimDateDispatch_SK
+
+relationship AutoDetected_551d5f8f-55a6-4363-8503-46f2bf1743d8
+	fromColumn: 'dm facttripsbasis'.DimDestinationlocation_sk
+	toColumn: 'dm DimDestinationLocation'.DimDestinationLocation_SK
+
+relationship AutoDetected_489b8a74-8216-4a30-a0c8-0d4f42f7e293
+	fromColumn: 'dm facttripsbasis'.DimOriginlocation_sk
+	toColumn: 'dm DimOriginLocation'.DimOriginLocation_SK
+
+relationship AutoDetected_5805c956-e843-4847-9c5d-af75ecef5b9a
+	fromColumn: 'dm facttripsbasis'.DimRoute_sk
+	toColumn: 'dm DimRoute'.DimRoute_SK
+

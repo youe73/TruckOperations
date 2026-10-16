@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "trucks_operations"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2aa7655f-ad32-449f-8f65-4b104468f7d0"
+  }
+}

@@ -1,0 +1,113 @@
+table 'dm DimTrailer'
+	lineageTag: 7833f1a0-be99-4889-b75f-f731a3adfb93
+
+	column DimTrailer_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b83101c-34cd-4c48-9f75-3f0463903742
+		summarizeBy: sum
+		sourceColumn: DimTrailer_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_location
+		dataType: string
+		lineageTag: f7621edd-0f46-4688-9640-a0e0f5c866b9
+		summarizeBy: none
+		sourceColumn: current_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_id
+		dataType: string
+		lineageTag: 33dfe14b-5b3d-4439-b726-9b32581e91db
+		summarizeBy: none
+		sourceColumn: trailer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column length_feet
+		dataType: int64
+		formatString: 0
+		lineageTag: fd99b266-8a60-4c96-85bc-21933d71d218
+		summarizeBy: sum
+		sourceColumn: length_feet
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 01c6c801-9b21-484f-92e9-2fcd4b481706
+		summarizeBy: sum
+		sourceColumn: model_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 4bd25562-08fe-4970-97a8-2692e91b484e
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column acquisition_date
+		dataType: string
+		lineageTag: d67bc450-6243-4a49-b62a-ca7b2eaa0b90
+		summarizeBy: none
+		sourceColumn: acquisition_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column vin
+		dataType: string
+		lineageTag: f185a05d-c41d-465f-866c-660d7baeff8f
+		summarizeBy: none
+		sourceColumn: vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bb5e958e-a7d1-4f73-9e74-e67cdf42cf30
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: 488f7bb7-7a11-4cf1-b49c-55a8b38c8fee
+			defaultHierarchy: LocalDateTable_310d97e1-b6ac-410a-aafc-57b7bf337c20.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_type
+		dataType: string
+		lineageTag: eda9cb39-a39c-400a-a636-080ea563b840
+		summarizeBy: none
+		sourceColumn: trailer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ccd9dd3-0771-4491-9920-fc08edccbc8e
+		summarizeBy: sum
+		sourceColumn: trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimTrailer' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimTrailer = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimTrailer"]}[Data]
+				in
+				    dm_DimTrailer
+
+	annotation PBI_ResultType = Table
+

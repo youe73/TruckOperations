@@ -1,0 +1,79 @@
+table 'dm DimCustomer'
+	lineageTag: 52c9e42e-142d-469a-8ef4-625bb9564235
+
+	column DimCustomer_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 87f8c0d0-6ba6-4d65-9f97-d69b004d24f0
+		summarizeBy: none
+		sourceColumn: DimCustomer_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 1a152724-778b-4cd8-a47f-caa7fadb346e
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_type
+		dataType: string
+		lineageTag: c092bb78-d520-4844-9dfd-ac19b0f65995
+		summarizeBy: none
+		sourceColumn: customer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: 36bc5215-2628-41f4-bbf0-63164c017415
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ad3f07f6-f999-4058-b824-45187f91a2ba
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: 2febf56e-57bd-4ca9-8284-0f2bcda5d702
+			defaultHierarchy: LocalDateTable_6c76b0ab-1c8a-4bf6-bf60-3bed11f78c0f.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_status
+		dataType: string
+		lineageTag: 2044d1e4-7e6c-45be-9b19-82c9fcaca23f
+		summarizeBy: none
+		sourceColumn: account_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column credit_terms_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ce24b0f-88e9-413f-891b-85ab41b29f78
+		summarizeBy: sum
+		sourceColumn: credit_terms_days
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimCustomer' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimCustomer = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimCustomer"]}[Data]
+				in
+				    dm_DimCustomer
+
+	annotation PBI_ResultType = Table
+

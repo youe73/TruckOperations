@@ -1,0 +1,41 @@
+model Model
+	culture: da-DK
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: da-DK
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dm DimCustomer","dm DimDateContractStart","dm DimDateLoad","dm DimDateDispatch","dm DimDestinationLocation","dm DimDriver","dm DimOriginLocation","dm DimRoute","dm DimTrailer","dm DimTruck","dm facttripsbasis"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'dm DimCustomer'
+ref table DateTableTemplate_f45c933a-244f-4c21-9c02-21c9d2712d41
+ref table LocalDateTable_6c76b0ab-1c8a-4bf6-bf60-3bed11f78c0f
+ref table 'dm DimDateContractStart'
+ref table LocalDateTable_faab5a4c-84ec-48ec-ae4a-6e5f1e9f864b
+ref table 'dm DimDateLoad'
+ref table LocalDateTable_ad7c6ce0-3cde-4e88-961b-df32d692556c
+ref table 'dm DimDateDispatch'
+ref table LocalDateTable_80f0c707-7947-4490-8e39-073ed63872fc
+ref table 'dm DimDestinationLocation'
+ref table LocalDateTable_eea3ab46-3a78-462d-b9e5-e45e71b13a11
+ref table 'dm DimDriver'
+ref table LocalDateTable_66123d5d-dafd-41d0-b061-8f0ba8791dfe
+ref table 'dm DimOriginLocation'
+ref table LocalDateTable_ed5d4f4a-a8d8-409b-8889-84031fbf6634
+ref table 'dm DimRoute'
+ref table LocalDateTable_9e065aa3-a59a-49bd-9cb0-d927188742c6
+ref table 'dm DimTrailer'
+ref table LocalDateTable_310d97e1-b6ac-410a-aafc-57b7bf337c20
+ref table 'dm DimTruck'
+ref table LocalDateTable_0ce8f82f-9188-4dfc-9983-3d028404c9b9
+ref table 'dm facttripsbasis'
+ref table LocalDateTable_e2e5ecc5-1626-4135-9094-c909628b0c44
+
+ref cultureInfo da-DK
+

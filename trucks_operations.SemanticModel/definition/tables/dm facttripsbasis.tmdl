@@ -1,0 +1,359 @@
+table 'dm facttripsbasis'
+	lineageTag: a082c5e8-8480-49cb-a0c5-346f162c4d26
+
+	column trip_id
+		dataType: string
+		lineageTag: 14541b97-1e81-4ec6-8713-e879887a7981
+		summarizeBy: none
+		sourceColumn: trip_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_id
+		dataType: string
+		lineageTag: 4dd44bb5-14a1-4439-ba5c-ef0bfe052908
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimDriver_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fed79d7-d31d-4a78-9fb1-59d22bf27a1c
+		summarizeBy: sum
+		sourceColumn: DimDriver_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_id
+		dataType: string
+		lineageTag: 2fa384f9-855e-4ad7-b77a-fdb26016198c
+		summarizeBy: none
+		sourceColumn: trailer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimTrailer_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: fd8236f8-a79a-4714-b887-886d0ab65ea1
+		summarizeBy: sum
+		sourceColumn: DimTrailer_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_id
+		dataType: string
+		lineageTag: 30d0d044-37cb-49b1-b522-6601bc7f593b
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimTruck_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: e2627829-07e3-4886-a982-7c3d470dbc62
+		summarizeBy: sum
+		sourceColumn: DimTruck_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch_date
+		dataType: string
+		lineageTag: 2b82c7bd-f1ef-4c6b-ae6f-8d7cef0a7fb4
+		summarizeBy: none
+		sourceColumn: dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimDatedispatch_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: f7b5f564-2b62-4506-9459-70b298026ac0
+		summarizeBy: none
+		sourceColumn: DimDatedispatch_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_date
+		dataType: string
+		lineageTag: 157f22fe-b2ff-4fa9-9f59-5f5c9f8a2eea
+		summarizeBy: none
+		sourceColumn: load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimDateload_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 19893d91-163e-4c70-ba34-ac51f4757f83
+		summarizeBy: none
+		sourceColumn: DimDateload_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract_start_date
+		dataType: string
+		lineageTag: baf82b07-1a95-412d-a5f5-a9ef683beb0b
+		summarizeBy: none
+		sourceColumn: contract_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimDatecontractstart_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: a0969116-05be-454a-8f82-8899ba6764a7
+		summarizeBy: none
+		sourceColumn: DimDatecontractstart_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: e38060e8-69da-4d94-b9bd-274b1ffa318f
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimCustomer_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 8fb03f4c-ea44-42b4-9f76-87dfd45fd203
+		summarizeBy: none
+		sourceColumn: DimCustomer_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_id
+		dataType: string
+		lineageTag: 4387e86c-c6ae-455d-8131-fdbd5b98856c
+		summarizeBy: none
+		sourceColumn: route_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimRoute_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 1461f183-f980-4eed-81fa-c93d9bd83d92
+		summarizeBy: none
+		sourceColumn: DimRoute_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_city
+		dataType: string
+		lineageTag: 9d5ffaae-6c28-4d2d-ac1b-1ee80a44d250
+		summarizeBy: none
+		sourceColumn: origin_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimOriginlocation_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 90b03e88-1e71-4fd2-b293-2582e079738c
+		summarizeBy: none
+		sourceColumn: DimOriginlocation_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_city
+		dataType: string
+		lineageTag: 3854395a-c6cf-4117-8eab-78af6c19a18c
+		summarizeBy: none
+		sourceColumn: destination_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimDestinationlocation_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b540607-577a-43b9-a6e8-15bc732fa077
+		summarizeBy: none
+		sourceColumn: DimDestinationlocation_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge
+		dataType: double
+		lineageTag: 14a376b4-b73f-4439-bbae-39a59b2e285e
+		summarizeBy: sum
+		sourceColumn: fuel_surcharge
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column weight_lbs
+		dataType: int64
+		formatString: 0
+		lineageTag: 2598ec3d-d9ff-4211-9056-db3b184c8ab7
+		summarizeBy: sum
+		sourceColumn: weight_lbs
+
+		annotation SummarizationSetBy = Automatic
+
+	column average_mpg
+		dataType: double
+		lineageTag: 235774af-2766-4830-8795-b68aec2dbc80
+		summarizeBy: none
+		sourceColumn: average_mpg
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column typical_transit_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f96d59c-27ba-40ad-8628-69904f93d0ff
+		summarizeBy: sum
+		sourceColumn: typical_transit_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge_rate
+		dataType: double
+		lineageTag: b6b79054-ed6b-40bf-9ef6-1df4722072ae
+		summarizeBy: sum
+		sourceColumn: fuel_surcharge_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_duration_hours
+		dataType: double
+		lineageTag: 574bfc58-b446-4635-b97e-c35e01d7cac4
+		summarizeBy: none
+		sourceColumn: actual_duration_hours
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column revenue
+		dataType: double
+		lineageTag: b8f526c6-f511-4f78-82f2-c2d2d7dd146a
+		summarizeBy: sum
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column annual_revenue_potential
+		dataType: int64
+		formatString: 0
+		lineageTag: aabf681b-ceb6-4766-b2c2-7dd443ccb76a
+		summarizeBy: none
+		sourceColumn: annual_revenue_potential
+
+		annotation SummarizationSetBy = User
+
+	column pieces
+		dataType: int64
+		formatString: 0
+		lineageTag: b79f7455-4c14-4416-959e-1bd77355a1ac
+		summarizeBy: sum
+		sourceColumn: pieces
+
+		annotation SummarizationSetBy = Automatic
+
+	column typical_distance_miles
+		dataType: int64
+		formatString: 0
+		lineageTag: e3dc4005-5479-4b09-84a5-c43ff633cbc6
+		summarizeBy: sum
+		sourceColumn: typical_distance_miles
+
+		annotation SummarizationSetBy = Automatic
+
+	column accessorial_charges
+		dataType: int64
+		formatString: 0
+		lineageTag: a88aa34c-9ced-4127-ae5a-2041b1f1a79f
+		summarizeBy: none
+		sourceColumn: accessorial_charges
+
+		annotation SummarizationSetBy = User
+
+	column idle_time_hours
+		dataType: double
+		lineageTag: 53603274-1e4e-446c-a857-7aa47df2727e
+		summarizeBy: sum
+		sourceColumn: idle_time_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_terms_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 7626fc28-1cc4-432e-8710-c217ae7b3cc0
+		summarizeBy: sum
+		sourceColumn: credit_terms_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_distance_miles
+		dataType: int64
+		formatString: 0
+		lineageTag: 25ac3b1a-a7bc-4837-80d2-e4b97d833ce2
+		summarizeBy: none
+		sourceColumn: actual_distance_miles
+
+		annotation SummarizationSetBy = User
+
+	column base_rate_per_mile
+		dataType: double
+		lineageTag: 50b5a94e-6951-44ba-9b87-b971734c57e6
+		summarizeBy: none
+		sourceColumn: base_rate_per_mile
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_gallons_used
+		dataType: double
+		lineageTag: fbfff24c-2ae0-49ef-be6e-762bd268b45e
+		summarizeBy: sum
+		sourceColumn: fuel_gallons_used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 20b4d0ba-21ec-4fbd-bb65-d4ddffa79e8f
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: 946439e7-bb3d-4ad6-a0c0-c60e7b8cf6e1
+			defaultHierarchy: LocalDateTable_e2e5ecc5-1626-4135-9094-c909628b0c44.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm facttripsbasis' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_facttripsbasis = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="facttripsbasis"]}[Data]
+				in
+				    dm_facttripsbasis
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,135 @@
+table 'dm DimDriver'
+	lineageTag: c82638e0-c8cf-4e52-9fd2-850026f11828
+
+	column DimDriver_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 849cd82c-6b31-444a-b8a8-ef4ac3684512
+		summarizeBy: sum
+		sourceColumn: DimDriver_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_experience
+		dataType: int64
+		formatString: 0
+		lineageTag: 90d85dce-871a-40d8-af73-d12285ed9166
+		summarizeBy: sum
+		sourceColumn: years_experience
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_birth
+		dataType: string
+		lineageTag: 63d996fe-b39a-4d30-a346-d360498bac42
+		summarizeBy: none
+		sourceColumn: date_of_birth
+
+		annotation SummarizationSetBy = Automatic
+
+	column license_state
+		dataType: string
+		lineageTag: c84e47a4-8e79-4cc9-943b-79d3a645baf0
+		summarizeBy: none
+		sourceColumn: license_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_id
+		dataType: string
+		lineageTag: b7f737de-8413-4cdb-a218-68fd71219e1f
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b2197bfd-20da-4db8-847b-e0cfe0651e79
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: 0dea5110-2fb7-4a54-be12-722f7f7fe42e
+			defaultHierarchy: LocalDateTable_66123d5d-dafd-41d0-b061-8f0ba8791dfe.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_terminal
+		dataType: string
+		lineageTag: 5581450d-c106-45a9-9312-19674cec655e
+		summarizeBy: none
+		sourceColumn: home_terminal
+
+		annotation SummarizationSetBy = Automatic
+
+	column employment_status
+		dataType: string
+		lineageTag: c93a9a6c-7dde-4ea1-bdaf-4f19ef3eb5ad
+		summarizeBy: none
+		sourceColumn: employment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_date
+		dataType: string
+		lineageTag: 5a0f1bf4-aab4-4b0e-80fc-c2ab15c0d64f
+		summarizeBy: none
+		sourceColumn: hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column license_number
+		dataType: string
+		lineageTag: 7d372fc0-fb6f-432f-a23d-6bda5178147e
+		summarizeBy: none
+		sourceColumn: license_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column termination_date
+		dataType: string
+		lineageTag: 977fc9b1-fb94-4002-b905-d17090c351c6
+		summarizeBy: none
+		sourceColumn: termination_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 0fd5f585-6205-4265-a6ff-1aee664e8b04
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: a086fc89-7fbf-42ac-ac24-71d61a6611d8
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cdl_class
+		dataType: string
+		lineageTag: 99ab4632-e7a2-4172-a022-0749ba3a8376
+		summarizeBy: none
+		sourceColumn: cdl_class
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimDriver' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimDriver = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimDriver"]}[Data]
+				in
+				    dm_DimDriver
+
+	annotation PBI_ResultType = Table
+

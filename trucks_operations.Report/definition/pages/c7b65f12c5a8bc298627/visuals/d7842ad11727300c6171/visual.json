@@ -1,0 +1,360 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "d7842ad11727300c6171",
+  "position": {
+    "x": 0,
+    "y": 471.35663913968409,
+    "z": 0,
+    "height": 609.26447679190608,
+    "width": 1636.3691184106935,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "revenue"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.revenue)",
+              "nativeQueryRef": "Sum af revenue"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "pieces"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.pieces)",
+              "nativeQueryRef": "Sum af pieces"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "accessorial_charges"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.accessorial_charges)",
+              "nativeQueryRef": "Sum af accessorial_charges"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "actual_distance_miles"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.actual_distance_miles)",
+              "nativeQueryRef": "Sum af actual_distance_miles"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "actual_duration_hours"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.actual_duration_hours)",
+              "nativeQueryRef": "Sum af actual_duration_hours"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "annual_revenue_potential"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.annual_revenue_potential)",
+              "nativeQueryRef": "Sum af annual_revenue_potential"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "average_mpg"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.average_mpg)",
+              "nativeQueryRef": "Sum af average_mpg"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dm facttripsbasis"
+                        }
+                      },
+                      "Property": "base_rate_per_mile"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dm facttripsbasis.base_rate_per_mile)",
+              "nativeQueryRef": "Sum af base_rate_per_mile"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm DimDateLoad"
+                    }
+                  },
+                  "Property": "load_date"
+                }
+              },
+              "queryRef": "dm DimDateLoad.load_date",
+              "nativeQueryRef": "load_date"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a43b55389cb2d56cb397",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "revenue"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5b79b6293256f5b54152",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "pieces"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "28631958ac7422e7b943",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "accessorial_charges"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "99251173d27052ecaa31",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "actual_distance_miles"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7d32a054a66b40e61f91",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "actual_duration_hours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6b81485de07baea8785a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "annual_revenue_potential"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "81ec9f4611e50b2804d8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "average_mpg"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1299ec4846b744c16f3f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "base_rate_per_mile"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5d14a7279b4aa4412ef1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm DimDateLoad"
+              }
+            },
+            "Property": "load_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

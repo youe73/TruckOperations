@@ -1,0 +1,46 @@
+table 'dm DimDateContractStart'
+	lineageTag: aa506039-df22-4a9a-b383-3c682992f1e4
+
+	column DimDateContractStart_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 7620b61d-3661-4398-8e04-bde8931ae7ea
+		summarizeBy: none
+		sourceColumn: DimDateContractStart_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract_start_date
+		dataType: string
+		lineageTag: 1f2292f0-fb10-4603-ae10-e0d1e9bd34cd
+		summarizeBy: none
+		sourceColumn: contract_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f86083a1-858e-4ec0-98fc-4924dbcbb156
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: b10a3fdb-0db2-4c11-8195-94959b84d6f3
+			defaultHierarchy: LocalDateTable_faab5a4c-84ec-48ec-ae4a-6e5f1e9f864b.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimDateContractStart' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimDateContractStart = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimDateContractStart"]}[Data]
+				in
+				    dm_DimDateContractStart
+
+	annotation PBI_ResultType = Table
+

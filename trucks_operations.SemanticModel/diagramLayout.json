@@ -1,0 +1,165 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 426.76134381086035,
+            "y": -50
+          },
+          "nodeIndex": "dm DimCustomer",
+          "nodeLineageTag": "52c9e42e-142d-469a-8ef4-625bb9564235",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 728.48594659392052,
+            "y": 243.72048584475607
+          },
+          "nodeIndex": "dm DimDateContractStart",
+          "nodeLineageTag": "aa506039-df22-4a9a-b383-3c682992f1e4",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 638.89602387848106,
+            "y": 466.69290090091408
+          },
+          "nodeIndex": "dm DimDateDispatch",
+          "nodeLineageTag": "13d3f8d3-5440-4afa-a2b8-d66621d6330b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 308.3780970160326
+          },
+          "nodeIndex": "dm DimDateLoad",
+          "nodeLineageTag": "65af5d26-548b-4165-9697-d1b1c6572e0b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 351.86895693622421,
+            "y": 663.927892321558
+          },
+          "nodeIndex": "dm DimDestinationLocation",
+          "nodeLineageTag": "da3ce637-8fe5-4485-863b-34945c85140d",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 962.48594659392052,
+            "y": 294.963946160779
+          },
+          "nodeIndex": "dm DimDriver",
+          "nodeLineageTag": "c82638e0-c8cf-4e52-9fd2-850026f11828",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 133.84357335101464,
+            "y": 22.394316873195635
+          },
+          "nodeIndex": "dm DimOriginLocation",
+          "nodeLineageTag": "877111bc-1885-49ea-ada0-c386c945ce92",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 65.176048926590283,
+            "y": 604.44580858052927
+          },
+          "nodeIndex": "dm DimRoute",
+          "nodeLineageTag": "7cb09cea-2589-4ad0-b1df-3f13dbb114be",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1246.4859465939205,
+            "y": 294.963946160779
+          },
+          "nodeIndex": "dm DimTrailer",
+          "nodeLineageTag": "7833f1a0-be99-4889-b75f-f731a3adfb93",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1530.4859465939205,
+            "y": 294.963946160779
+          },
+          "nodeIndex": "dm DimTruck",
+          "nodeLineageTag": "d232393c-fb92-426b-861d-8c1655f5a4ee",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 337.11454099966068,
+            "y": 251.49248730410591
+          },
+          "nodeIndex": "dm facttripsbasis",
+          "nodeLineageTag": "a082c5e8-8480-49cb-a0c5-346f162c4d26",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Alle tabeller",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Alle tabeller",
+  "defaultDiagram": "Alle tabeller"
+}

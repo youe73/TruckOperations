@@ -1,0 +1,130 @@
+table 'dm DimTruck'
+	lineageTag: d232393c-fb92-426b-861d-8c1655f5a4ee
+
+	column DimTruck_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 4688c4d3-e4e6-4dcb-b603-50b2f108c4a9
+		summarizeBy: sum
+		sourceColumn: DimTruck_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_type
+		dataType: string
+		lineageTag: 40a614a1-b787-48be-b17d-dab414380e64
+		summarizeBy: none
+		sourceColumn: fuel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_id
+		dataType: string
+		lineageTag: ee054074-6b90-4477-9107-9c91a9ee4039
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 14aa568f-baf5-46ef-9b9a-145366d92999
+		summarizeBy: sum
+		sourceColumn: unit_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 340af50d-0293-46ea-a993-e2df49eecfac
+		summarizeBy: sum
+		sourceColumn: model_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: b8c6c487-fd81-4004-bee8-b1a72171a043
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_terminal
+		dataType: string
+		lineageTag: 4e99cc8f-e082-4293-924c-6db18eb7862c
+		summarizeBy: none
+		sourceColumn: home_terminal
+
+		annotation SummarizationSetBy = Automatic
+
+	column acquisition_date
+		dataType: string
+		lineageTag: 59e701e7-b1f4-499f-ac8b-57a226c2dc36
+		summarizeBy: none
+		sourceColumn: acquisition_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column vin
+		dataType: string
+		lineageTag: 30b823d8-696f-4daf-b2d6-8262c98bc990
+		summarizeBy: none
+		sourceColumn: vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column make
+		dataType: string
+		lineageTag: 67374c0f-f4b1-4779-93b1-6a1502a475f4
+		summarizeBy: none
+		sourceColumn: make
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6784ef32-f676-4777-9244-36ed8e57171f
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: ba2cd89e-0fe4-4f8c-b82b-72aab68f28a1
+			defaultHierarchy: LocalDateTable_0ce8f82f-9188-4dfc-9983-3d028404c9b9.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	column acquisition_mileage
+		dataType: int64
+		formatString: 0
+		lineageTag: 981b6d05-cff0-4d68-86c1-81bd31d93ce4
+		summarizeBy: sum
+		sourceColumn: acquisition_mileage
+
+		annotation SummarizationSetBy = Automatic
+
+	column tank_capacity_gallons
+		dataType: int64
+		formatString: 0
+		lineageTag: 64505957-2b3e-45f6-8c94-e9475ccd2d5b
+		summarizeBy: sum
+		sourceColumn: tank_capacity_gallons
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimTruck' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimTruck = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimTruck"]}[Data]
+				in
+				    dm_DimTruck
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "490af6a42e29c61b18d2",
+  "position": {
+    "x": 524.87311345248668,
+    "y": 34.99154089683244,
+    "z": 2,
+    "height": 193,
+    "width": 381,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm DimDateLoad"
+                    }
+                  },
+                  "Property": "load_date"
+                }
+              },
+              "queryRef": "dm DimDateLoad.load_date",
+              "nativeQueryRef": "load_date",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d7323cdc1e27dcfbd04",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm DimDateLoad"
+              }
+            },
+            "Property": "load_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+table 'dm DimDateLoad'
+	lineageTag: 65af5d26-548b-4165-9697-d1b1c6572e0b
+
+	column DimDateLoad_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dd1ccbc-e406-4b50-8854-80582fc25b57
+		summarizeBy: none
+		sourceColumn: DimDateLoad_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_date
+		dataType: string
+		lineageTag: dfe25fad-9788-43c8-aa21-d8196c7ed35d
+		summarizeBy: none
+		sourceColumn: load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d44a1f08-86ac-441d-a219-3ef675c04ec0
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: 48a76bda-5b46-400e-951a-71103cbbd060
+			defaultHierarchy: LocalDateTable_ad7c6ce0-3cde-4e88-961b-df32d692556c.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimDateLoad' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimDateLoad = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimDateLoad"]}[Data]
+				in
+				    dm_DimDateLoad
+
+	annotation PBI_ResultType = Table
+

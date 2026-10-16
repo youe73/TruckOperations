@@ -1,0 +1,54 @@
+table 'dm DimDestinationLocation'
+	lineageTag: da3ce637-8fe5-4485-863b-34945c85140d
+
+	column DimDestinationLocation_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 61c7cb9a-12d7-460c-a524-0bba98c5f250
+		summarizeBy: none
+		sourceColumn: DimDestinationLocation_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 970b7888-10ae-41f1-a9b3-d8b65215a638
+		summarizeBy: none
+		sourceColumn: load_datetime
+
+		variation Variation
+			isDefault
+			relationship: eaa973e2-5802-402b-b792-e77b787c036d
+			defaultHierarchy: LocalDateTable_eea3ab46-3a78-462d-b9e5-e45e71b13a11.Datohierarki
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_state
+		dataType: string
+		lineageTag: c88d8fc7-e84d-4497-a201-a449a13a5dc9
+		summarizeBy: none
+		sourceColumn: destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_city
+		dataType: string
+		lineageTag: a410c6dd-328d-4d7f-a87a-87f67fdcb285
+		summarizeBy: none
+		sourceColumn: destination_city
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dm DimDestinationLocation' = m
+		mode: import
+		source =
+				let
+				    Kilde = Sql.Databases(".\SQLEXPRESS01"),
+				    Logistics_Operations_Database_trucksdata = Kilde{[Name="Logistics_Operations_Database_trucksdata"]}[Data],
+				    dm_DimDestinationLocation = Logistics_Operations_Database_trucksdata{[Schema="dm",Item="DimDestinationLocation"]}[Data]
+				in
+				    dm_DimDestinationLocation
+
+	annotation PBI_ResultType = Table
+
