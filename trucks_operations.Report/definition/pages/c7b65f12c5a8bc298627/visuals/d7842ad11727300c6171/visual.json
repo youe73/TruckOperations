@@ -25,44 +25,6 @@
                           "Entity": "dm facttripsbasis"
                         }
                       },
-                      "Property": "revenue"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(dm facttripsbasis.revenue)",
-              "nativeQueryRef": "Sum af revenue"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "dm facttripsbasis"
-                        }
-                      },
-                      "Property": "pieces"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(dm facttripsbasis.pieces)",
-              "nativeQueryRef": "Sum af pieces"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "dm facttripsbasis"
-                        }
-                      },
                       "Property": "accessorial_charges"
                     }
                   },
@@ -180,6 +142,34 @@
               },
               "queryRef": "dm DimDateLoad.load_date",
               "nativeQueryRef": "load_date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm facttripsbasis"
+                    }
+                  },
+                  "Property": "totalrevenue"
+                }
+              },
+              "queryRef": "dm facttripsbasis.totalrevenue",
+              "nativeQueryRef": "totalrevenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm facttripsbasis"
+                    }
+                  },
+                  "Property": "totalpieces"
+                }
+              },
+              "queryRef": "dm facttripsbasis.totalpieces",
+              "nativeQueryRef": "totalpieces"
             }
           ]
         }
@@ -189,44 +179,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "a43b55389cb2d56cb397",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dm facttripsbasis"
-                  }
-                },
-                "Property": "revenue"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5b79b6293256f5b54152",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dm facttripsbasis"
-                  }
-                },
-                "Property": "pieces"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "28631958ac7422e7b943",
         "field": {
@@ -354,6 +306,34 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "184afcb884e297d9f8c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm facttripsbasis"
+              }
+            },
+            "Property": "totalrevenue"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "76a5f5fd2bf288e7fb5f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm facttripsbasis"
+              }
+            },
+            "Property": "totalpieces"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

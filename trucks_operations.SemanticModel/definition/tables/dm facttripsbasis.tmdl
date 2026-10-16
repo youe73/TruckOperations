@@ -1,6 +1,17 @@
 table 'dm facttripsbasis'
 	lineageTag: a082c5e8-8480-49cb-a0c5-346f162c4d26
 
+	measure totalrevenue = ```
+			sum('dm facttripsbasis'[revenue]) 
+			```
+		lineageTag: 7e914d46-cabc-49d3-9c7c-7d28f216416e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure totalpieces = sum('dm facttripsbasis'[pieces])
+		formatString: 0
+		lineageTag: 9f50dad2-fea7-4dfb-902b-abb94b614916
+
 	column trip_id
 		dataType: string
 		lineageTag: 14541b97-1e81-4ec6-8713-e879887a7981

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "6f707f81a514709ec39e",
+  "position": {
+    "x": 113.2079264309285,
+    "y": 102.91629675538954,
+    "z": 0,
+    "height": 922.13001892829027,
+    "width": 1601.3775775138611,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm DimDateLoad"
+                    }
+                  },
+                  "Property": "load_date"
+                }
+              },
+              "queryRef": "dm DimDateLoad.load_date",
+              "nativeQueryRef": "load_date",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm facttripsbasis"
+                    }
+                  },
+                  "Property": "totalpieces"
+                }
+              },
+              "queryRef": "dm facttripsbasis.totalpieces",
+              "nativeQueryRef": "totalpieces"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dm facttripsbasis"
+                    }
+                  },
+                  "Property": "totalrevenue"
+                }
+              },
+              "queryRef": "dm facttripsbasis.totalrevenue",
+              "nativeQueryRef": "totalrevenue"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dm facttripsbasis"
+                  }
+                },
+                "Property": "totalpieces"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "95a21c9f8b9c8cd49665",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm facttripsbasis"
+              }
+            },
+            "Property": "totalpieces"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6e2e24c22181c5e88691",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm facttripsbasis"
+              }
+            },
+            "Property": "totalrevenue"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f168c5c52b694677552c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dm DimDateLoad"
+              }
+            },
+            "Property": "load_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
